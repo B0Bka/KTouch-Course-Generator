@@ -1,12 +1,41 @@
-Script to generate a programmer-friendly lecture for Ktouch
-(http://ktouch.sourceforge.net/).
+Script to generate a programmer-friendly course for KTouch 2.3.0,
+the KDE Typing Trainer (https://edu.kde.org/applications/all/ktouch).
 
-This only uses random characters and alternates levels with new characters and
-review levels.
-New characters are progressively introduced by finger and later on include
-punctuation, capital letters and (optional) accented letters.
+Original introduction by UncleZeiv for his KTouch Lecture Generator:
 
-It tends to be pretty hard and unnerving - I take no responsibility for smashed 
-keyboards or any kind of repetitive strain injury.
+"This only uses random characters and alternates levels with new characters
+and review levels. New characters are progressively introduced by finger and
+later on include punctuation, capital letters and (optional) accented letters.
 
-- UncleZeiv
+"It tends to be pretty hard and unnerving - I take no responsibility for
+smashed keyboards or any kind of repetitive strain injury."
+
+My Changes:
+
+UncleZeiv's code was for a previous version of KTouch that required a
+different XML format for imports.  This fork is for KTouch 2.3.0.
+
+I flattened and shortened the Python script by removing the class structure,
+to make it easier for me to understand and modify (sorry).
+
+How to Use:
+
+I've only tested the Python script on Ubuntu 14.04, but it should run
+as-is on most platforms. (I also assume you'll want to customise the list
+of new characters in the script, i.e. the "chargroups" list).
+
+* When you've generated your XML file, start Ktouch 2.3.0.
+* Create a profile.
+* Tools (the wrench, top right) -> Course and Keyboard Layout Editor
+* Import Button -> browse to the XML file and select it
+* Keyboard Layout dropdown-menu -> Select language of current profile
+* The custom course should now appear in the main Ktouch window,
+  but if it does not, try the left/right green arrows.
+  
+License:
+
+I don't see any license declaration for the original script on UncleZeiv's
+project, so the license is presumably as per the GitHub Terms & Conditions:
+
+"By setting your repositories to be viewed publicly, you agree to allow
+others to view and fork your repositories."
